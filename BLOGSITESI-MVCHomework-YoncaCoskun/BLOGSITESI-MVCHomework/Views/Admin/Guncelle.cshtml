@@ -1,0 +1,38 @@
+﻿@model BLOGSITESI_MVCHomework.Models.BlogModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+@using (Html.BeginForm("Kaydet", "Home"))
+{
+    @Html.HiddenFor(x => x.MakaleId)
+    <table>
+        <tr>
+            <td>Makale Başlık</td>
+            <td>@Html.TextBoxFor(x => x.Baslik)</td>
+        </tr>
+        <tr>
+            <td>Özet</td>
+            <td>@Html.TextBoxFor(x => x.Ozet)</td>
+        </tr>
+        <tr>
+            <td>Içerik</td>
+            <td>@Html.TextBoxFor(x => x.Icerik)</td>
+        </tr>
+        <tr>
+            <td>Okunma Sayısı</td>
+            <td>@Html.TextBoxFor(x => x.OkumaSayisi)</td>
+        </tr>
+        <tr>
+            <td>Eklenme Tarihi</td>
+            <td>@Html.EditorFor(x => x.EklenmeTarihi)</td>
+        </tr>
+
+    </table>
+    <input type="submit" value="Kaydet/Güncelle"/>
+}
+</body>
+</html>

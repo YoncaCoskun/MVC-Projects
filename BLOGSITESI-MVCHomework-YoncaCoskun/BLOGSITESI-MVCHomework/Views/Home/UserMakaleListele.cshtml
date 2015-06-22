@@ -1,0 +1,36 @@
+﻿@using BLOGSITESI_MVCHomework.Models
+@model System.Linq.IQueryable<BLOGSITESI_MVCHomework.Models.BlogModel>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Makale Id</th>
+            <th>Başlık</th>
+            <th>Özet</th>
+            <th>Içerik</th>
+            
+        </tr>
+
+        @foreach (BlogModel blog in Model)
+        {
+            
+                <tr>
+                    <td>@blog.MakaleId</td>
+                    <td>@blog.Baslik</td>
+                    <td>@blog.Ozet</td>
+                    <td>@blog.Icerik</td>
+                    <td>@Html.ActionLink("Makale Detay", "MakaleDetay", new { Id = blog.MakaleId })</td>
+                    
+                </tr>
+            
+
+        }
+        </table>
+</body>
+</html>
