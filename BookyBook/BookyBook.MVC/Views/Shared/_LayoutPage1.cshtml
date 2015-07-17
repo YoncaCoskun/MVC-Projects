@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/themes/base/core.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/theme.css" rel="stylesheet" />
+    <link href="~/Content/site.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+    <script src="~/Scripts/booky.js"></script>
+</head>
+<body>
+    <div id="container" class="shadowBox">
+        <div id="header" class="shadowBox">Booky Book</div>
+        <div id="content" class="shadowBox">
+            <div id="leftBar" class="shadowBox">
+                <a href="/RentTransaction">Kiralama</a><br />
+                <a href="/Category">Kategoriler</a><br />
+                <a href="/Author">Yazarlar</a><br />
+                <a href="/Employee">Çalışanlar</a><br />
+                <a href="/Publisher">Yayın Evleri</a><br />
+                <a href="/Customer">Üyeler</a><br />
+                <a href="/Book">Kitap</a><br />
+                <a href="/Magazine">Dergi</a><br />
+            </div>
+            <div id="rightBar" class="shadowBox">@RenderBody()</div>
+            <div class="clearer"></div>
+        </div>
+        <div class="clearer"></div>
+    </div>
+</body>
+</html>

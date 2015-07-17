@@ -1,0 +1,28 @@
+﻿@using BookyBook.MVC.Helper
+@model IEnumerable<BookyBook.Entity.Employee>
+@{
+    ViewBag.Title = "Çalışanlar";
+}
+<table class="tableBorder shadowBox">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Cinsiyet</th>
+            <th>@Html.ActionLink("Yeni", "Kaydet", new { Id = 0 })</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var itm in Model)
+        {
+<tr>
+    <td>@itm.Id</td>
+    <td>@itm.Firstname</td>
+    <td>@itm.Lastname</td>
+    <td>@itm.Gender.AttributeGetir().Name</td>
+    <td>@Html.ActionLink("Güncelle", "Kaydet", new { itm.Id })</td>
+</tr>
+        }
+    </tbody>
+</table>

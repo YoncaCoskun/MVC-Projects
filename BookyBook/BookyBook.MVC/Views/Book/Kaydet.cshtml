@@ -1,0 +1,56 @@
+﻿@using BookyBook.MVC.Helper
+@model BookyBook.Entity.Book
+@{
+    ViewBag.Title = "Kaydet";
+}
+
+<h2>@Html.DisplayFor(x => x.Name)</h2>
+@using (Html.BeginForm("Kaydet", "Book", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table class="tableBorder shadowBox">
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td>@Html.DisplayFor(x => x.Id) @Html.HiddenFor(x => x.Id)</td>
+            </tr>
+            <tr>
+                <td>Ad</td>
+                <td>@Html.TextBoxFor(x => x.Name)</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı</td>
+                <td>@Html.TextBoxFor(x => x.PageCount)</td>
+            </tr>
+            <tr>
+                <td>Raf No</td>
+                <td>@Html.TextBoxFor(x => x.PlaceCode)</td>
+            </tr>
+            <tr>
+                <td>Yayın Evi</td>
+                <td>@Html.DropDownListFor(x => x.PublisherId, ViewBag.TumYayinEvleri as List<SelectListItem> , "Seçiniz")</td>
+            </tr>
+            <tr>
+                <td>Dil</td>
+                <td>@Html.RadioButtonListemFor(x => x.Language)</td>
+            </tr>
+        <tr>
+            <td>Yıl</td>
+            <td>@Html.TextBoxFor(x => x.ReleaseYear)</td>
+        </tr>
+        <tr>
+            <td>Resim</td>
+            <td>
+                <input type="file" name="fileUpload1"/>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Kaydet" />
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+}

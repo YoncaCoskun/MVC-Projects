@@ -1,0 +1,29 @@
+﻿@model BookyBook.Entity.Category
+@{
+    ViewBag.Title = "Kaydet";
+}
+
+<h2>@Html.DisplayFor(x => x.Name)</h2>
+@using (Html.BeginForm())
+{
+    <table class="tableBorder shadowBox">
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td>@Html.DisplayFor(x => x.Id) @Html.HiddenFor(x => x.Id)</td>
+            </tr>
+            <tr>
+                <td>Kategori Ad</td>
+                <td>@Html.TextBoxFor(x => x.Name)</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Kaydet" />
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+}

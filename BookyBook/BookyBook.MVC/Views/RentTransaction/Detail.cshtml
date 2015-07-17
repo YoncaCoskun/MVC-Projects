@@ -1,0 +1,42 @@
+﻿@model BookyBook.MVC.Models.ViewModelProduct
+
+<table class="tableBorder shadowBox">
+    <tbody>
+    <tr>
+        <td>Üye</td>
+        <td>
+            <input type="text" name="membername" placeholder="üye ara..."/>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table class="tableBorder shadowBox">
+    <tbody>
+    <tr>
+        <td ><img src="@Model.PhotoPath" width="300"/></td>
+        <td>
+
+            <div>Adı:@Model.Name</div>
+
+            <div>Sayfa Sayısı: @Model.PageCount</div>
+
+            <div>Raf No: @Model.PlaceCode</div>
+
+            <div>@Model.LanguageWithTitle @Model.PublishNumberWithTitle</div>
+
+            <div>@Model.ReleaseYearWithTitle @Model.PublishDateWithTitle</div>
+
+            <div>@Model.AuthorsWithTitle</div>
+
+
+
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">Özet: @Model.Summary</td>
+    </tr>
+    </tbody>
+
+
+</table>

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<BookyBook.Entity.Publisher>
+@{
+    ViewBag.Title = "Yayın Evleri";
+}
+<table class="tableBorder shadowBox">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>@Html.ActionLink("Yeni", "Kaydet", new { Id = 0 })</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var itm in Model)
+        {
+<tr>
+    <td>@itm.Id</td>
+    <td>@itm.Name</td>
+    <td>@Html.ActionLink("Güncelle", "Kaydet", new { itm.Id })</td>
+</tr>
+        }
+    </tbody>
+</table>

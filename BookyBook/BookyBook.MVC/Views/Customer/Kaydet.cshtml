@@ -1,0 +1,65 @@
+﻿@using BookyBook.MVC.Helper
+@model BookyBook.Entity.Customer
+@{
+    ViewBag.Title = "Kaydet";
+}
+
+<h2>@Html.DisplayFor(x => x.Firstname) @Html.DisplayFor(x => x.Lastname)</h2>
+@using (Html.BeginForm())
+{
+    <table class="tableBorder shadowBox">
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td>@Html.DisplayFor(x => x.Id) @Html.HiddenFor(x => x.Id)</td>
+            </tr>
+            <tr>
+                <td>Ad</td>
+                <td>@Html.TextBoxFor(x => x.Firstname)</td>
+            </tr>
+            <tr>
+                <td>Soyad</td>
+                <td>@Html.TextBoxFor(x => x.Lastname)</td>
+            </tr>
+            <tr>
+                <td>Cep Telefonu</td>
+                <td>@Html.TextBoxFor(x => x.Mobile)</td>
+            </tr>
+            <tr>
+                <td>Mail</td>
+                <td>@Html.TextBoxFor(x => x.Mail)</td>
+            </tr>
+            <tr>
+                <td>Adres</td>
+                <td>@Html.TextBoxFor(x => x.Address)</td>
+            </tr>
+            <tr>
+                <td>Doğum Tarihi</td>
+                <td>@Html.TextBoxFor(x => x.Birthdate)</td>
+            </tr>
+            <tr>
+                <td>TC Kimlik No</td>
+                <td>@Html.TextBoxFor(x => x.TrIdentity)</td>
+            </tr>
+            <tr>
+                <td>Cinsiyet</td>
+                <td>@Html.RadioButtonListemFor(x => x.Gender)</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Kaydet" />
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+}
+<script type="text/javascript">
+    $(document).ready(
+        function () {
+            $('#Birthdate').datepicker();
+        }
+    );
+</script>

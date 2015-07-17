@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "/Views/Shared/_LayoutPage1.cshtml";
+}
+@model IEnumerable<BookyBook.Entity.Product>
+           
+@foreach (var mdl in Model)
+{
+    <div class="bookBox">
+        <img src="@mdl.PhotoPath"/><br/>
+        <br/>
+        <span>@mdl.Name</span>
+    </div>
+}
